@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useState } from "react";
+import "./App.css";
+import Forminput from "./components/Forminput";
+import Formsuccess from "./components/Formsuccess";
 
 function App() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleFormSubmit = () => {
+    setIsSubmitted(true); // Set submitted state to true on successful form submission
+  };
+
+  const handleReturnToForm = () => {
+    setIsSubmitted(false); // Reset submitted state
+   // setIsFormVisible(true); // Make form visible again
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    {isSubmitted ? null : <Forminput onSubmitSuccess={handleFormSubmit} />}  {/* Conditionally render EmailForm */}
+      {isSubmitted && <Formsuccess onReturnToForm={handleReturnToForm}/> }
+      
     </div>
   );
 }
