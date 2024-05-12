@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import "./App.css";
 import Forminput from "./components/Forminput";
@@ -13,15 +12,23 @@ function App() {
 
   const handleReturnToForm = () => {
     setIsSubmitted(false); // Reset submitted state
-   // setIsFormVisible(true); // Make form visible again
   };
 
   return (
-    <div className="App">
-    {isSubmitted ? null : <Forminput onSubmitSuccess={handleFormSubmit} />}  {/* Conditionally render EmailForm */}
-      {isSubmitted && <Formsuccess onReturnToForm={handleReturnToForm}/> }
-      
-    </div>
+    <>
+      <div className="App">
+        {isSubmitted ? null : <Forminput onSubmitSuccess={handleFormSubmit} />}{" "}
+        {/* Conditionally render EmailForm */}
+        {isSubmitted && <Formsuccess onReturnToForm={handleReturnToForm} />}
+      </div>
+      <div className="flex justify-center  text-white">
+        Challenge by{" "}  
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by     <a href="https://github.com/bahati7/" target="_blank"> Bahati Philemon</a>.
+      </div>
+    </>
   );
 }
 
