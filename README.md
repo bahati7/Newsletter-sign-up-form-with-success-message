@@ -32,6 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
+![desktop-design](https://github.com/bahati7/newsletter-sign-up-form-with-success-message/assets/14108202/d53e8dd3-1640-4ad6-a5a2-e70b5812af15)
 
 
 
